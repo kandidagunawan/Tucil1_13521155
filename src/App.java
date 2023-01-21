@@ -3,7 +3,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class App {
-    // String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
     public static double operation(double num1, double num2, double opcode) {
         if (opcode == 0) {
             return (num1 + num2);
@@ -22,7 +21,6 @@ public class App {
 
     public static Set hitung(double x1, double x2, double x3, double x4, Set<String> formula) {
         String[] operators = { "+", "-", "*", "/" };
-        // Set<String> formula = new HashSet<String>();
         double hasil = 0;
         double temp = 0;
         int count = 0;
@@ -87,25 +85,7 @@ public class App {
                 }
             }
         }
-        // System.out.println(formula);
         return formula;
     }
-
-    // public static void main(String[] args) {
-    // Set<String> formula = new HashSet<String>();
-    // double arr[] = { 1, 8, 9, 12 };
-    // for (int i = 0; i < 4; i++) {
-    // for (int j = 0; j < 4; j++) {
-    // for (int k = 0; k < 4; k++) {
-    // for (int l = 0; l < 4; l++) {
-    // if ((i != j) && (i != k) && (i != l) && (j != k) && (j != l) && (k != l)) {
-    // formula = hitung(arr[i], arr[j], arr[k], arr[l], formula);
-    // }
-
-    // }
-    // }
-    // }
-    // }
-    // System.out.println(formula);
 
 }

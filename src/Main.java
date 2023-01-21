@@ -19,7 +19,6 @@ public class Main extends App {
             choice = scan.nextLine();
         }
         ArrayList<Integer> cards = new ArrayList<>();
-        // ArrayList<Integer> temp = new ArrayList<>();
         String input;
         int num;
         int numOfCards = 0;
@@ -123,6 +122,12 @@ public class Main extends App {
         System.out.println(numOfSolutions + " solutions found");
         long duration = finishTime - startTime;
         System.out.println("Time taken: " + duration + " ms");
+        System.out.println("Apakah kamu ingin menyimpan solusi dalam bentuk file? (y/n)");
+        String isfileOut = scan.nextLine();
+        if (isfileOut.equals("y")) {
+            outputFile.solutionFile(formula, numOfSolutions);
+
+        }
     }
 
 }
