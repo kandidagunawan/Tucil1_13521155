@@ -74,6 +74,17 @@ public class Main extends App {
                     }
                 }
             } while (incorrect == true);
+            if (currCard.equals("A")) {
+                cards.add(1);
+            } else if (currCard.equals("J")) {
+                cards.add(11);
+            } else if (currCard.equals("Q")) {
+                cards.add(12);
+            } else if (currCard.equals("K")) {
+                cards.add(13);
+            } else {
+                cards.add(Integer.parseInt(currCard));
+            }
 
         }
 
@@ -86,21 +97,23 @@ public class Main extends App {
             }
 
         }
-
+        long startTime = System.currentTimeMillis();
         Set<String> formula = new HashSet<String>();
-        // double arr[] = { 1, 8, 9, 12 };
+
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 for (int k = 0; k < 4; k++) {
                     for (int l = 0; l < 4; l++) {
                         if ((i != j) && (i != k) && (i != l) && (j != k) && (j != l) && (k != l)) {
-                            formula = App.hitung(cards.get(i), cards.get(j), cards.get(k), cards.get(l), formula);
+                            formula = App.hitung(cards.get(i), cards.get(j), cards.get(k), cards.get(l),
+                                    formula);
                         }
 
                     }
                 }
             }
         }
+        long finishTime = System.currentTimeMillis();
         // System.out.println(formula);
         for (String f : formula) {
             numOfSolutions++;
@@ -108,9 +121,8 @@ public class Main extends App {
 
         }
         System.out.println(numOfSolutions + " solutions found");
-
+        long duration = finishTime - startTime;
+        System.out.println("Time taken: " + duration + " ms");
     }
-
-    // scan.close();
 
 }
