@@ -91,23 +91,21 @@ public class App {
         return formula;
     }
 
-    public static void main(String[] args) {
-        Set<String> formula = new HashSet<String>();
-        double arr[] = { 1, 8, 9, 12 };
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                for (int k = 0; k < 4; k++) {
-                    for (int l = 0; l < 4; l++) {
-                        if ((i != j) && (i != k) && (i != l) && (j != k) && (j != l) && (k != l)) {
-                            formula = hitung(arr[i], arr[j], arr[k], arr[l], formula);
-                        }
+    // public static void main(String[] args) {
+    // Set<String> formula = new HashSet<String>();
+    // double arr[] = { 1, 8, 9, 12 };
+    // for (int i = 0; i < 4; i++) {
+    // for (int j = 0; j < 4; j++) {
+    // for (int k = 0; k < 4; k++) {
+    // for (int l = 0; l < 4; l++) {
+    // if ((i != j) && (i != k) && (i != l) && (j != k) && (j != l) && (k != l)) {
+    // formula = hitung(arr[i], arr[j], arr[k], arr[l], formula);
+    // }
 
-                    }
-                }
-            }
-        }
-        System.out.println(formula);
-
-    }
+    // }
+    // }
+    // }
+    // }
+    // System.out.println(formula);
 
 }
