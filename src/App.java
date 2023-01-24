@@ -12,7 +12,7 @@ public class App {
             return (num1 * num2);
         } else {
             if (num2 == 0) {
-                return -99999;
+                return -9999999;
             } else {
                 return (num1 / num2);
             }
