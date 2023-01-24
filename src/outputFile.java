@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -26,11 +27,13 @@ public class outputFile {
         }
     }
 
-    public static void solutionFile(Set<String> solutionFormula, Integer numOfSol) {
+    public static void solutionFile(Set<String> solutionFormula, Integer numOfSol, ArrayList<Integer> cards) {
         try {
             createFile();
             FileWriter writer = new FileWriter(filename);
-
+            writer.write("SOLUSI DARI 24 GAME SOLVER \n");
+            writer.write(
+                    "Masukan : " + cards.get(0) + " " + cards.get(1) + " " + cards.get(2) + " " + cards.get(3) + "\n");
             writer.write(numOfSol + " solutions found" + "\n");
             for (String f : solutionFormula) {
 
