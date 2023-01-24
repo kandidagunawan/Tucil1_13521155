@@ -15,7 +15,6 @@ public class Main extends App {
             System.out.println("2. Generate input secara acak");
             System.out.print("Pilihan anda (1/2): ");
             String choice = scan.nextLine();
-            // scan.nextLine();
             while ((!choice.equals("1") && !choice.equals("2"))) {
                 System.out.println("Masukan salah!");
                 System.out.print("Pilihan anda (1/2): ");
@@ -40,6 +39,7 @@ public class Main extends App {
                         if (numOfSpaces > 3) {
                             System.out.println(numOfSpaces);
                             incorrect = true;
+                            System.out.println(3);
                             cards = new ArrayList<>();
                             break;
                         }
@@ -77,6 +77,7 @@ public class Main extends App {
                     }
                     if (numOfSpaces != 3) {
                         incorrect = true;
+                        currCard = "";
                         cards = new ArrayList<>();
                     } else {
                         if ((currCard.equals("A")) || (currCard.equals("2")) || currCard.equals("3")
