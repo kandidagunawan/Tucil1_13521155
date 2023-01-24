@@ -40,9 +40,7 @@ public class Main extends App {
                         if (numOfSpaces > 3) {
                             System.out.println(numOfSpaces);
                             incorrect = true;
-                            System.out.println(1);
-                            System.out.println("Masukan tidak sesuai!");
-
+                            cards = new ArrayList<>();
                             break;
                         }
                         if (curr == ' ') {
@@ -69,9 +67,8 @@ public class Main extends App {
                                 currCard = "";
                             } else {
                                 incorrect = true;
-                                System.out.println(2);
-                                System.out.println("Masukan tidak sesuai!");
                                 currCard = "";
+                                cards = new ArrayList<>();
                                 break;
                             }
                         } else {
@@ -80,20 +77,41 @@ public class Main extends App {
                     }
                     if (numOfSpaces != 3) {
                         incorrect = true;
+                        cards = new ArrayList<>();
+                    } else {
+                        if ((currCard.equals("A")) || (currCard.equals("2")) || currCard.equals("3")
+                                || currCard.equals("4")
+                                || currCard.equals("5")
+                                || currCard.equals("6") || currCard.equals("7") || currCard.equals("8")
+                                || currCard.equals("9")
+                                || currCard.equals("10") || currCard.equals("J") || currCard.equals("Q")
+                                || currCard.equals("K")) {
+                            incorrect = false;
+                        } else {
+                            incorrect = true;
+                            currCard = "";
+                            cards = new ArrayList<>();
+                        }
+                        if (incorrect == false) {
+                            if (currCard.equals("A")) {
+                                cards.add(1);
+                            } else if (currCard.equals("J")) {
+                                cards.add(11);
+                            } else if (currCard.equals("Q")) {
+                                cards.add(12);
+                            } else if (currCard.equals("K")) {
+                                cards.add(13);
+                            } else {
+                                cards.add(Integer.parseInt(currCard));
+                            }
+                            currCard = "";
+                        }
                     }
-                } while (incorrect == true);
+                    if (incorrect) {
+                        System.out.println("Masukan tidak sesuai!");
+                    }
 
-                if (currCard.equals("A")) {
-                    cards.add(1);
-                } else if (currCard.equals("J")) {
-                    cards.add(11);
-                } else if (currCard.equals("Q")) {
-                    cards.add(12);
-                } else if (currCard.equals("K")) {
-                    cards.add(13);
-                } else {
-                    cards.add(Integer.parseInt(currCard));
-                }
+                } while (incorrect == true);
 
             }
 
@@ -136,9 +154,13 @@ public class Main extends App {
             System.out.println("Time taken: " + duration + " ms");
             System.out.println("Apakah kamu ingin menyimpan solusi dalam bentuk file? (y/n)");
             String isfileOut = scan.nextLine();
+            while (!isfileOut.equals("y") && !isfileOut.equals("n")) {
+                System.out.println("Masukan salah!");
+                System.out.println("Apakah kamu ingin menyimpan solusi dalam bentuk file? (y/n)");
+                isfileOut = scan.nextLine();
+            }
             if (isfileOut.equals("y")) {
                 outputFile.solutionFile(formula, numOfSolutions, cards);
-
             }
             System.out.println("Apakah kamu ingin keluar dari program ini? (y/n)");
             String end = scan.nextLine();
