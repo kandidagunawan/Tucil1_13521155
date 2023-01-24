@@ -1,18 +1,19 @@
-## Getting Started
+## Tucil 1 Stima - 24 Card Game Solver with Brute Force Algorithm
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
+## General Information
 
-The workspace contains two folders by default, where:
+This 24 Card Game Solver was made in Java Programming Language, implemented with Brute Force Algorithm. The program has a command-line interface (text-based UI). It takes 4 numbers from user or generate them randomly and then print out the formula using those 4 numbers and arithmetic operations ("+", "*" "/" "()") which results the value of 24. 
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Dependencies
+Java 17
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## How to Run Program
+1. Clone this repository
+2. Go to folder `src` and open the command prompt there
+3. Type `javac Main.java` 
+4. Type java Main
+5. The program will run
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Developer
+Kandida Edgina Gunawan - 13521155
